@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Erfan Khosravi | Automotive Consultant</title>
-    <meta name="description" content="Erfan Khosravi - Automotive Consultant at Camelback Toyota">
+    <meta name="description" content="Erfan Khosravi - Automotive Consultant | Friendly Car Guy">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Erfan Khosravi | Automotive Consultant">
-    <meta property="og:description" content="Your trusted automotive consultant">
+    <meta property="og:description" content="Your trusted automotive consultant - Friendly Car Guy">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://card.friendlycarguy.com">
+    <meta property="og:image" content="https://card.friendlycarguy.com/photo.png">
 
-    <!-- Favicon (placeholder - replace with actual) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -80,24 +81,50 @@
             }
         }
 
+        /* Brand Header */
+        .brand-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: var(--accent-subtle);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .brand-logo .emoji {
+            font-size: 16px;
+        }
+
         /* Profile Section */
         .profile {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
-            border: 2px solid var(--border);
+            border: 3px solid var(--accent);
             margin: 0 auto 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
             overflow: hidden;
+            box-shadow: 0 8px 32px rgba(212, 165, 116, 0.2);
         }
 
         .avatar img {
@@ -114,12 +141,12 @@
         }
 
         .title {
-            font-size: 15px;
-            color: var(--accent);
+            font-size: 14px;
+            color: var(--text-secondary);
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .company {
@@ -132,7 +159,7 @@
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--border), transparent);
-            margin: 32px 0;
+            margin: 24px 0;
         }
 
         /* Action Buttons */
@@ -159,6 +186,7 @@
             font-weight: 500;
             letter-spacing: 0.5px;
             transition: all 0.2s ease;
+            cursor: pointer;
         }
 
         .action-btn:hover, .action-btn:active {
@@ -224,8 +252,15 @@
             margin-bottom: 2px;
         }
 
-        /* Save Contact Button */
-        .save-contact {
+        /* Button Group */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Primary Button */
+        .primary-btn {
             width: 100%;
             padding: 18px 24px;
             background: var(--accent);
@@ -244,12 +279,12 @@
             gap: 10px;
         }
 
-        .save-contact:hover, .save-contact:active {
+        .primary-btn:hover, .primary-btn:active {
             background: var(--accent-hover);
             transform: translateY(-2px);
         }
 
-        .save-contact svg {
+        .primary-btn svg {
             width: 20px;
             height: 20px;
             stroke: currentColor;
@@ -257,19 +292,85 @@
             fill: none;
         }
 
+        /* Secondary Button */
+        .secondary-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .secondary-btn:hover, .secondary-btn:active {
+            background: var(--bg-secondary);
+            border-color: var(--border-hover);
+            transform: translateY(-1px);
+        }
+
+        .secondary-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        /* Wallet Row */
+        .wallet-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .wallet-row .secondary-btn {
+            flex: 1;
+            padding: 14px 12px;
+            font-size: 12px;
+        }
+
+        .wallet-row .secondary-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
         /* Footer */
         .footer {
-            margin-top: 40px;
+            margin-top: 32px;
             text-align: center;
         }
 
-        .footer-logo {
-            font-size: 12px;
-            color: var(--text-secondary);
-            opacity: 0.6;
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.5px;
         }
 
-        /* Subtle glow effect */
+        .footer-brand .emoji {
+            font-size: 16px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* Glow effect */
         .glow {
             position: fixed;
             top: -50%;
@@ -282,25 +383,32 @@
             z-index: -1;
         }
 
-        /* Toast notification */
+        /* Toast */
         .toast {
             position: fixed;
             bottom: 24px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid var(--accent);
             padding: 14px 24px;
             border-radius: 12px;
             font-size: 14px;
             opacity: 0;
             transition: all 0.3s ease;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .toast.show {
             transform: translateX(-50%) translateY(0);
             opacity: 1;
+        }
+
+        .toast .emoji {
+            font-size: 16px;
         }
     </style>
 </head>
@@ -308,11 +416,16 @@
     <div class="glow"></div>
 
     <main class="container">
+        <header class="brand-header">
+            <div class="brand-logo">
+                <span class="emoji">🚗</span>
+                Friendly Car Guy
+            </div>
+        </header>
+
         <section class="profile">
             <div class="avatar">
-                <!-- Replace with actual photo -->
-                <span>E</span>
-                <!-- <img src="photo.jpg" alt="Erfan Khosravi"> -->
+                <img src="photo.png" alt="Erfan Khosravi">
             </div>
             <h1 class="name">Erfan Khosravi</h1>
             <p class="title">Automotive Consultant</p>
@@ -365,39 +478,83 @@
             </a>
         </section>
 
-        <button class="save-contact" onclick="downloadVCard()">
-            <svg viewBox="0 0 24 24">
-                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
-                <polyline points="17 21 17 13 7 13 7 21"/>
-                <polyline points="7 3 7 8 15 8"/>
-            </svg>
-            Save Contact
-        </button>
+        <div class="button-group">
+            <button class="primary-btn" onclick="saveContact()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                    <polyline points="17 21 17 13 7 13 7 21"/>
+                    <polyline points="7 3 7 8 15 8"/>
+                </svg>
+                Save Contact
+            </button>
+
+            <button class="secondary-btn" onclick="shareContact()">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="18" cy="5" r="3"/>
+                    <circle cx="6" cy="12" r="3"/>
+                    <circle cx="18" cy="19" r="3"/>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                </svg>
+                Share Contact
+            </button>
+
+            <div class="wallet-row">
+                <button class="secondary-btn" onclick="addToWallet('apple')">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    Apple Wallet
+                </button>
+                <button class="secondary-btn" onclick="addToWallet('google')">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+                        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke-width="1.5"/>
+                    </svg>
+                    Google Wallet
+                </button>
+            </div>
+        </div>
 
         <footer class="footer">
-            <p class="footer-logo">Friendly Car Guy</p>
+            <div class="footer-brand">
+                <span class="emoji">🚗</span>
+                Friendly Car Guy
+            </div>
+            <p class="footer-tagline">Someone on your side</p>
         </footer>
     </main>
 
-    <div class="toast" id="toast">Contact saved!</div>
+    <div class="toast" id="toast">
+        <span class="emoji">🚗</span>
+        <span id="toastMessage">Contact saved!</span>
+    </div>
 
     <script>
-        function downloadVCard() {
-            const vcard = `BEGIN:VCARD
+        // vCard with car emoji
+        const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Erfan Khosravi
+FN:🚗 Erfan Khosravi
 N:Khosravi;Erfan;;;
 ORG:Camelback Toyota
 TITLE:Automotive Consultant
 TEL;TYPE=CELL:+12027487308
 EMAIL:erfan@friendlycarguy.com
 URL:https://card.friendlycarguy.com
-NOTE:Your trusted automotive consultant
+NOTE:Your Friendly Car Guy 🚗
 END:VCARD`;
 
-            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
 
+        function saveContact() {
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
             link.download = 'Erfan_Khosravi.vcf';
@@ -405,11 +562,71 @@ END:VCARD`;
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
+            showToast('Contact saved!');
+        }
 
-            // Show toast
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2500);
+        async function shareContact() {
+            if (navigator.share) {
+                try {
+                    const blob = new Blob([vcardData], { type: 'text/vcard' });
+                    const file = new File([blob], 'Erfan_Khosravi.vcf', { type: 'text/vcard' });
+
+                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                        await navigator.share({
+                            files: [file],
+                            title: 'Erfan Khosravi - Automotive Consultant',
+                            text: 'Contact info for Erfan Khosravi 🚗'
+                        });
+                        showToast('Shared!');
+                    } else {
+                        await navigator.share({
+                            title: 'Erfan Khosravi - Automotive Consultant',
+                            text: 'Contact Erfan Khosravi, your Friendly Car Guy 🚗',
+                            url: 'https://card.friendlycarguy.com'
+                        });
+                        showToast('Shared!');
+                    }
+                } catch (err) {
+                    if (err.name !== 'AbortError') {
+                        copyLink();
+                    }
+                }
+            } else {
+                copyLink();
+            }
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText('https://card.friendlycarguy.com').then(() => {
+                showToast('Link copied!');
+            }).catch(() => {
+                showToast('card.friendlycarguy.com');
+            });
+        }
+
+        function addToWallet(type) {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
+
+            if (type === 'apple') {
+                if (isIOS) {
+                    // For full Apple Wallet, you need server-side pass signing
+                    // Fallback: save contact which can be added from Contacts app
+                    saveContact();
+                    showToast('Saved! Add from Contacts');
+                } else {
+                    showToast('Apple Wallet needs iPhone');
+                }
+            } else if (type === 'google') {
+                if (isAndroid) {
+                    // For full Google Wallet, you need Google Wallet API
+                    // Fallback: save contact
+                    saveContact();
+                    showToast('Saved! Add to Contacts');
+                } else {
+                    showToast('Google Wallet needs Android');
+                }
+            }
         }
     </script>
 </body>
