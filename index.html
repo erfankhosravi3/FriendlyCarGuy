@@ -58,10 +58,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 24px;
+            justify-content: flex-start;
+            padding: 48px 24px 24px 24px;
+            padding-top: max(48px, env(safe-area-inset-top, 48px));
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (min-height: 750px) {
+            body {
+                justify-content: center;
+                padding-top: 24px;
+            }
         }
 
         .container {
@@ -531,17 +539,17 @@
     </div>
 
     <script>
-        // vCard with car emoji
+        // vCard with car emoji in multiple fields for visibility
         const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:🚗 Erfan Khosravi
+FN:Erfan Khosravi 🚗
 N:Khosravi;Erfan;;;
-ORG:Camelback Toyota
+ORG:Camelback Toyota 🚗
 TITLE:Automotive Consultant
 TEL;TYPE=CELL:+12027487308
 EMAIL:erfan@friendlycarguy.com
 URL:https://card.friendlycarguy.com
-NOTE:Your Friendly Car Guy 🚗
+NOTE:🚗 Your Friendly Car Guy - Automotive Consultant
 END:VCARD`;
 
         function showToast(message) {
@@ -566,66 +574,66 @@ END:VCARD`;
         }
 
         async function shareContact() {
+            const shareData = {
+                title: 'Erfan Khosravi - Automotive Consultant',
+                text: 'Contact Erfan Khosravi, your Friendly Car Guy 🚗',
+                url: 'https://card.friendlycarguy.com'
+            };
+
+            // Try Web Share API first
             if (navigator.share) {
                 try {
-                    const blob = new Blob([vcardData], { type: 'text/vcard' });
-                    const file = new File([blob], 'Erfan_Khosravi.vcf', { type: 'text/vcard' });
-
-                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                        await navigator.share({
-                            files: [file],
-                            title: 'Erfan Khosravi - Automotive Consultant',
-                            text: 'Contact info for Erfan Khosravi 🚗'
-                        });
-                        showToast('Shared!');
-                    } else {
-                        await navigator.share({
-                            title: 'Erfan Khosravi - Automotive Consultant',
-                            text: 'Contact Erfan Khosravi, your Friendly Car Guy 🚗',
-                            url: 'https://card.friendlycarguy.com'
-                        });
-                        showToast('Shared!');
-                    }
+                    await navigator.share(shareData);
+                    showToast('Shared!');
+                    return;
                 } catch (err) {
-                    if (err.name !== 'AbortError') {
-                        copyLink();
-                    }
+                    if (err.name === 'AbortError') return;
+                    // Fall through to clipboard
                 }
-            } else {
-                copyLink();
             }
+
+            // Fallback: copy to clipboard
+            copyLink();
         }
 
         function copyLink() {
-            navigator.clipboard.writeText('https://card.friendlycarguy.com').then(() => {
+            const text = 'Contact Erfan Khosravi 🚗: https://card.friendlycarguy.com';
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('Link copied!');
+                }).catch(() => {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
                 showToast('Link copied!');
-            }).catch(() => {
+            } catch (e) {
                 showToast('card.friendlycarguy.com');
-            });
+            }
+            document.body.removeChild(textarea);
         }
 
         function addToWallet(type) {
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-            const isAndroid = /Android/.test(navigator.userAgent);
+            // Both buttons save the contact - works on all devices
+            saveContact();
 
             if (type === 'apple') {
-                if (isIOS) {
-                    // For full Apple Wallet, you need server-side pass signing
-                    // Fallback: save contact which can be added from Contacts app
-                    saveContact();
-                    showToast('Saved! Add from Contacts');
-                } else {
-                    showToast('Apple Wallet needs iPhone');
-                }
-            } else if (type === 'google') {
-                if (isAndroid) {
-                    // For full Google Wallet, you need Google Wallet API
-                    // Fallback: save contact
-                    saveContact();
-                    showToast('Saved! Add to Contacts');
-                } else {
-                    showToast('Google Wallet needs Android');
-                }
+                showToast('Contact saved! Open to add');
+            } else {
+                showToast('Contact saved! Open to add');
             }
         }
     </script>
