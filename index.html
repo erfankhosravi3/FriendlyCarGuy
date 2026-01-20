@@ -525,23 +525,36 @@ END:VCARD`;
         }
 
         async function shareContact() {
-            // Use native share sheet (iOS/Android/macOS Safari)
-            if (navigator.share) {
+            const shareUrl = 'https://card.friendlycarguy.com';
+
+            // Try native share sheet first (requires HTTPS)
+            if (navigator.share && window.isSecureContext) {
                 try {
                     await navigator.share({
                         title: 'Erfan Khosravi',
                         text: 'Automotive Consultant - Friendly Car Guy 🚗',
-                        url: 'https://card.friendlycarguy.com'
+                        url: shareUrl
                     });
+                    return; // Success - exit function
                 } catch (err) {
-                    // User cancelled - do nothing
-                    if (err.name !== 'AbortError') {
-                        showToast('Could not share');
-                    }
+                    if (err.name === 'AbortError') return; // User cancelled
+                    // Fall through to clipboard
                 }
-            } else {
-                // Fallback for browsers without share API
-                showToast('Copy link: card.friendlycarguy.com');
+            }
+
+            // Fallback: copy to clipboard
+            try {
+                await navigator.clipboard.writeText(shareUrl);
+                showToast('Link copied!');
+            } catch (err) {
+                // Final fallback
+                const input = document.createElement('input');
+                input.value = shareUrl;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+                showToast('Link copied!');
             }
         }
     </script>
