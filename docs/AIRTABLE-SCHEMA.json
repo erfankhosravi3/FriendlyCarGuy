@@ -1,0 +1,274 @@
+{
+  "base_name": "FCG Network",
+  "tables": [
+    {
+      "table_name": "People",
+      "description": "The human being - complete picture of who they are",
+      "fields": [
+        {"name": "Name", "type": "Single line text", "description": "Full name", "primary": true},
+        {"name": "Phone", "type": "Phone number", "description": "Primary phone for matching calls/texts"},
+        {"name": "Phone 2", "type": "Phone number", "description": "Secondary number"},
+        {"name": "Email", "type": "Email", "description": ""},
+        {"name": "Photo", "type": "Attachment", "description": "Profile photo"},
+        {"name": "Background", "type": "Long text", "description": "Where they came from, what shaped them"},
+        {"name": "Current Chapter", "type": "Single select", "options": ["New Parent", "Empty Nester", "Career Builder", "Entrepreneur", "Retiring", "Starting Over", "Building Wealth", "Health Journey", "Newlywed", "Single Life", "Student"]},
+        {"name": "What They're Building", "type": "Long text", "description": "Goals, dreams, projects"},
+        {"name": "What They're Navigating", "type": "Long text", "description": "Challenges, decisions, problems"},
+        {"name": "What Lights Them Up", "type": "Long text", "description": "Passions, hobbies, interests"},
+        {"name": "Partner", "type": "Single line text", "description": "Spouse/partner name"},
+        {"name": "Kids", "type": "Long text", "description": "Names, ages, what they're into"},
+        {"name": "Inner Circle", "type": "Long text", "description": "Close friends, people they mention"},
+        {"name": "Who Influences Them", "type": "Long text", "description": "Mentors, people they look up to"},
+        {"name": "Communication Style", "type": "Single select", "options": ["Texter", "Caller", "In-Person", "Email", "Quick & Direct", "Long Conversations"]},
+        {"name": "Best Time to Reach", "type": "Single line text", "description": "When to contact them"},
+        {"name": "Personality Notes", "type": "Long text", "description": "Introverted, extroverted, vibe"},
+        {"name": "Birthday", "type": "Date", "description": ""},
+        {"name": "Anniversary", "type": "Date", "description": ""},
+        {"name": "Other Important Dates", "type": "Long text", "description": "Kid birthdays, work anniversary"},
+        {"name": "Occupation", "type": "Single line text", "description": "What they do"},
+        {"name": "Company", "type": "Single line text", "description": "Where they work"},
+        {"name": "Industry", "type": "Single line text", "description": ""},
+        {"name": "Neighborhood", "type": "Single line text", "description": "Where they live"},
+        {"name": "Communities", "type": "Long text", "description": "Groups, clubs, churches, orgs"},
+        {"name": "Hangouts", "type": "Long text", "description": "Where they spend time"},
+        {"name": "How We Met", "type": "Long text", "description": "The origin story"},
+        {"name": "Introduced By", "type": "Link to another record", "linked_table": "People"},
+        {"name": "First Impression", "type": "Long text", "description": "What you noticed, what clicked"},
+        {"name": "Shared Experiences", "type": "Long text", "description": "Trips, meals, moments together"},
+        {"name": "Inside References", "type": "Long text", "description": "Jokes, stories only you two know"},
+        {"name": "Relationship Strength", "type": "Rating", "max": 5},
+        {"name": "Trajectory", "type": "Single select", "options": ["Growing", "Stable", "Needs Attention", "Fading", "New"]},
+        {"name": "Last Real Connection", "type": "Date", "description": "Last meaningful human moment"},
+        {"name": "Connection Frequency", "type": "Single select", "options": ["Weekly", "Monthly", "Quarterly", "Yearly", "Sporadic"]},
+        {"name": "What We Talk About", "type": "Long text", "description": "Topics, themes"},
+        {"name": "Notes", "type": "Long text", "description": "Running notes"},
+        {"name": "Status", "type": "Single select", "options": ["New", "Friend", "Prospect", "Customer", "Repeat Customer", "VIP", "Dormant", "Lost"]},
+        {"name": "Source", "type": "Single select", "options": ["Walk-in", "Referral", "Web", "Social", "Service", "Event", "Cold", "Repeat"]},
+        {"name": "Vehicle Interest", "type": "Single line text", "description": "What vehicle they want"},
+        {"name": "Budget", "type": "Currency", "description": "Price range"},
+        {"name": "Timeline", "type": "Single select", "options": ["Now", "This Month", "2-3 Months", "Researching", "Not Looking"]},
+        {"name": "Tags", "type": "Multiple select", "options": ["Cash Buyer", "Financing", "Trade-In", "Spanish", "Fleet", "Employee", "Family", "VIP", "Referrer", "Connector"]},
+        {"name": "Created", "type": "Created time", "description": "Auto"},
+        {"name": "Last Modified", "type": "Last modified time", "description": "Auto"}
+      ]
+    },
+    {
+      "table_name": "Value Log",
+      "description": "Track value given and received - the currency of relationships",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Date", "type": "Date", "description": "When it happened"},
+        {"name": "Direction", "type": "Single select", "options": ["Given", "Received"]},
+        {"name": "Type", "type": "Single select", "options": ["Introduction", "Information", "Opportunity", "Help", "Gift", "Experience", "Recognition", "Referral", "Invitation", "Recommendation", "Advice", "Support"]},
+        {"name": "Description", "type": "Long text", "description": "What happened"},
+        {"name": "Impact", "type": "Single select", "options": ["Small", "Medium", "Large", "Life-Changing"]},
+        {"name": "Reciprocated", "type": "Checkbox", "description": "Was this returned"},
+        {"name": "Notes", "type": "Long text", "description": "Additional context"}
+      ]
+    },
+    {
+      "table_name": "Introductions",
+      "description": "Network graph - who connected whom",
+      "fields": [
+        {"name": "Date", "type": "Date", "description": "When intro was made"},
+        {"name": "Connector", "type": "Link to another record", "linked_table": "People", "description": "Person who made the introduction"},
+        {"name": "Person A", "type": "Link to another record", "linked_table": "People", "description": "First person"},
+        {"name": "Person B", "type": "Link to another record", "linked_table": "People", "description": "Second person"},
+        {"name": "Context", "type": "Long text", "description": "Why the introduction was made"},
+        {"name": "Outcome", "type": "Long text", "description": "What came of it"},
+        {"name": "Direction", "type": "Single select", "options": ["Received (someone introduced me)", "Made (I introduced others)"]}
+      ]
+    },
+    {
+      "table_name": "Life Events",
+      "description": "Their journey - milestones and moments to show up for",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Date", "type": "Date", "description": "When it happened"},
+        {"name": "Type", "type": "Single select", "options": ["Birthday", "Anniversary", "Baby Born", "Kid Milestone", "Graduation", "Wedding", "Engagement", "New Job", "Promotion", "Started Business", "Retired", "Moved", "Health Challenge", "Loss", "Big Win", "Achievement", "Other"]},
+        {"name": "Title", "type": "Single line text", "description": "Brief description"},
+        {"name": "Details", "type": "Long text", "description": "Full details"},
+        {"name": "You Showed Up", "type": "Checkbox", "description": "Did you acknowledge this"},
+        {"name": "How You Showed Up", "type": "Long text", "description": "What you did"}
+      ]
+    },
+    {
+      "table_name": "Opportunities",
+      "description": "Ways to add value - your action list for being a great connector",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Type", "type": "Single select", "options": ["Introduction to Make", "Information to Share", "Opportunity to Tell Them", "Problem to Help Solve", "Event to Invite To", "Way to Celebrate Them", "Resource to Send", "Other"]},
+        {"name": "Description", "type": "Long text", "description": "What you could do"},
+        {"name": "Why It Matters", "type": "Long text", "description": "Why this would be valuable to them"},
+        {"name": "Status", "type": "Single select", "options": ["Identified", "In Progress", "Done", "Not Applicable"]},
+        {"name": "Priority", "type": "Single select", "options": ["Low", "Medium", "High", "Do Today"]},
+        {"name": "Date Identified", "type": "Date", "description": "When you noticed this"},
+        {"name": "Date Completed", "type": "Date", "description": "When you acted"},
+        {"name": "Outcome", "type": "Long text", "description": "What happened"}
+      ]
+    },
+    {
+      "table_name": "Calls",
+      "description": "Call log - every phone interaction",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Phone", "type": "Phone number", "description": "For unknown callers"},
+        {"name": "Direction", "type": "Single select", "options": ["Inbound", "Outbound"]},
+        {"name": "Status", "type": "Single select", "options": ["Answered", "Missed", "Voicemail", "No Answer"]},
+        {"name": "Duration", "type": "Number", "description": "Seconds"},
+        {"name": "Recording URL", "type": "URL", "description": "Link to recording"},
+        {"name": "Transcription", "type": "Long text", "description": "Call transcript"},
+        {"name": "Summary", "type": "Long text", "description": "AI or manual summary"},
+        {"name": "What I Learned", "type": "Long text", "description": "New info about them"},
+        {"name": "Follow Up Needed", "type": "Long text", "description": "What to do next"},
+        {"name": "Relationship Impact", "type": "Single select", "options": ["Deepened", "Maintained", "Neutral", "Damaged"]},
+        {"name": "Notes", "type": "Long text", "description": "Your notes"},
+        {"name": "Timestamp", "type": "Date and time", "description": "When call happened"},
+        {"name": "Twilio SID", "type": "Single line text", "description": "Reference ID"}
+      ]
+    },
+    {
+      "table_name": "Messages",
+      "description": "SMS log - every text message",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Phone", "type": "Phone number", "description": "For unknown contacts"},
+        {"name": "Direction", "type": "Single select", "options": ["Inbound", "Outbound"]},
+        {"name": "Body", "type": "Long text", "description": "Message content"},
+        {"name": "Status", "type": "Single select", "options": ["Received", "Sent", "Delivered", "Read", "Failed"]},
+        {"name": "Template Used", "type": "Link to another record", "linked_table": "Templates"},
+        {"name": "Timestamp", "type": "Date and time", "description": "When sent/received"},
+        {"name": "Twilio SID", "type": "Single line text", "description": "Reference ID"}
+      ]
+    },
+    {
+      "table_name": "Deals",
+      "description": "Sales pipeline - business transactions",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Vehicle", "type": "Link to another record", "linked_table": "Inventory"},
+        {"name": "Stage", "type": "Single select", "options": ["Prospect", "Test Drive", "Negotiation", "Pencil", "F&I", "Delivery", "Sold", "Dead"]},
+        {"name": "Stage Changed", "type": "Date and time", "description": "When stage changed"},
+        {"name": "Asking Price", "type": "Currency", "description": ""},
+        {"name": "Negotiated Price", "type": "Currency", "description": ""},
+        {"name": "Trade Vehicle", "type": "Single line text", "description": "Their trade-in"},
+        {"name": "Trade Allowance", "type": "Currency", "description": ""},
+        {"name": "Trade ACV", "type": "Currency", "description": "Actual cash value"},
+        {"name": "Down Payment", "type": "Currency", "description": ""},
+        {"name": "Monthly Payment", "type": "Currency", "description": ""},
+        {"name": "Term", "type": "Number", "description": "Months"},
+        {"name": "Rate", "type": "Percent", "description": "Interest rate"},
+        {"name": "Objections", "type": "Long text", "description": "What's holding them back"},
+        {"name": "Hot Button", "type": "Long text", "description": "What will close this deal"},
+        {"name": "Competition", "type": "Single line text", "description": "Other options they're considering"},
+        {"name": "Expected Close", "type": "Date", "description": ""},
+        {"name": "Actual Close", "type": "Date and time", "description": ""},
+        {"name": "Won", "type": "Checkbox", "description": ""},
+        {"name": "Lost Reason", "type": "Single select", "options": ["Price", "Trade Value", "Credit", "Bought Elsewhere", "No Response", "Timing", "Other"]},
+        {"name": "Front Gross", "type": "Currency", "description": "Vehicle profit"},
+        {"name": "Back Gross", "type": "Currency", "description": "F&I profit"},
+        {"name": "Commission", "type": "Currency", "description": "Your earnings"},
+        {"name": "Notes", "type": "Long text", "description": ""},
+        {"name": "Created", "type": "Created time", "description": ""}
+      ]
+    },
+    {
+      "table_name": "Tasks",
+      "description": "Follow-ups and to-dos",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Deal", "type": "Link to another record", "linked_table": "Deals"},
+        {"name": "Type", "type": "Single select", "options": ["Follow-up Call", "Follow-up Text", "Send Info", "Make Introduction", "Check In", "Appointment Reminder", "Credit App", "Paperwork", "Delivery", "Post-Sale Follow-up", "Add Value", "Other"]},
+        {"name": "Title", "type": "Single line text", "description": "Brief description"},
+        {"name": "Description", "type": "Long text", "description": "Details"},
+        {"name": "Due Date", "type": "Date", "description": ""},
+        {"name": "Due Time", "type": "Single line text", "description": ""},
+        {"name": "Priority", "type": "Single select", "options": ["Low", "Normal", "High", "Urgent"]},
+        {"name": "Status", "type": "Single select", "options": ["Pending", "In Progress", "Done", "Skipped"]},
+        {"name": "Outcome", "type": "Long text", "description": "What happened"},
+        {"name": "Created", "type": "Created time", "description": ""},
+        {"name": "Completed", "type": "Date and time", "description": ""}
+      ]
+    },
+    {
+      "table_name": "Appointments",
+      "description": "Scheduled meetings and test drives",
+      "fields": [
+        {"name": "Person", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Type", "type": "Single select", "options": ["Test Drive", "Showroom Visit", "Phone Call", "Coffee/Meal", "Delivery", "Follow-up Meeting", "Other"]},
+        {"name": "Vehicle", "type": "Link to another record", "linked_table": "Inventory"},
+        {"name": "Date", "type": "Date", "description": ""},
+        {"name": "Time", "type": "Single line text", "description": ""},
+        {"name": "Duration", "type": "Number", "description": "Minutes"},
+        {"name": "Location", "type": "Single line text", "description": "Where"},
+        {"name": "Status", "type": "Single select", "options": ["Scheduled", "Confirmed", "Arrived", "Completed", "No Show", "Cancelled", "Rescheduled"]},
+        {"name": "Reminder Sent", "type": "Checkbox", "description": ""},
+        {"name": "Notes", "type": "Long text", "description": "Pre-meeting notes"},
+        {"name": "Outcome", "type": "Long text", "description": "What happened"},
+        {"name": "Created", "type": "Created time", "description": ""}
+      ]
+    },
+    {
+      "table_name": "Inventory",
+      "description": "Vehicle inventory",
+      "fields": [
+        {"name": "Stock Number", "type": "Single line text", "description": "Primary identifier", "primary": true},
+        {"name": "VIN", "type": "Single line text", "description": ""},
+        {"name": "Year", "type": "Number", "description": ""},
+        {"name": "Make", "type": "Single line text", "description": ""},
+        {"name": "Model", "type": "Single line text", "description": ""},
+        {"name": "Trim", "type": "Single line text", "description": ""},
+        {"name": "Type", "type": "Single select", "options": ["New", "Pre-Owned", "Certified Pre-Owned"]},
+        {"name": "Body Style", "type": "Single select", "options": ["Sedan", "SUV", "Truck", "Coupe", "Van", "Hatchback", "Wagon", "Convertible"]},
+        {"name": "Exterior Color", "type": "Single line text", "description": ""},
+        {"name": "Interior Color", "type": "Single line text", "description": ""},
+        {"name": "Mileage", "type": "Number", "description": ""},
+        {"name": "Fuel Type", "type": "Single select", "options": ["Gas", "Hybrid", "Electric", "Plug-in Hybrid", "Diesel"]},
+        {"name": "Engine", "type": "Single line text", "description": ""},
+        {"name": "Transmission", "type": "Single select", "options": ["Automatic", "Manual", "CVT"]},
+        {"name": "Drivetrain", "type": "Single select", "options": ["FWD", "RWD", "AWD", "4WD"]},
+        {"name": "MSRP", "type": "Currency", "description": "Sticker price"},
+        {"name": "Internet Price", "type": "Currency", "description": "Listed price"},
+        {"name": "Invoice", "type": "Currency", "description": "Dealer cost (new)"},
+        {"name": "ACV", "type": "Currency", "description": "Actual cash value (used)"},
+        {"name": "Min Gross", "type": "Currency", "description": "Floor for negotiation"},
+        {"name": "Features", "type": "Long text", "description": "Key features"},
+        {"name": "Description", "type": "Long text", "description": "Listing description"},
+        {"name": "Image URL", "type": "URL", "description": "Main photo"},
+        {"name": "Listing URL", "type": "URL", "description": "Website link"},
+        {"name": "Status", "type": "Single select", "options": ["Available", "Pending", "Sold", "Incoming", "Hold"]},
+        {"name": "Days on Lot", "type": "Number", "description": ""},
+        {"name": "Date Added", "type": "Date", "description": ""},
+        {"name": "Last Updated", "type": "Date and time", "description": ""},
+        {"name": "Sold Date", "type": "Date", "description": ""},
+        {"name": "Sold To", "type": "Link to another record", "linked_table": "People"},
+        {"name": "Sold Price", "type": "Currency", "description": ""}
+      ]
+    },
+    {
+      "table_name": "Templates",
+      "description": "Quick message templates for SMS",
+      "fields": [
+        {"name": "Name", "type": "Single line text", "description": "Quick reference", "primary": true},
+        {"name": "Category", "type": "Single select", "options": ["Greeting", "Follow-up", "Appointment", "Info Request", "Negotiation", "Post-Sale", "Check-in", "Birthday", "Holiday", "Be-Back", "Introduction", "Thank You"]},
+        {"name": "Body", "type": "Long text", "description": "Message with {placeholders}"},
+        {"name": "Placeholders", "type": "Long text", "description": "Variables like {Name}, {Vehicle}"},
+        {"name": "Use Count", "type": "Number", "description": "Times used"},
+        {"name": "Last Used", "type": "Date and time", "description": ""},
+        {"name": "Active", "type": "Checkbox", "description": "Still in use"}
+      ]
+    },
+    {
+      "table_name": "Sources",
+      "description": "Track where people come from for ROI analysis",
+      "fields": [
+        {"name": "Name", "type": "Single line text", "description": "Source name", "primary": true},
+        {"name": "Type", "type": "Single select", "options": ["Walk-in", "Phone-in", "Internet", "Referral", "Repeat", "Service Drive", "Social Media", "Event", "Cold Outreach"]},
+        {"name": "Channel", "type": "Single select", "options": ["Organic", "Paid", "Social", "Direct", "Referral"]},
+        {"name": "Active", "type": "Checkbox", "description": "Still using"},
+        {"name": "Monthly Cost", "type": "Currency", "description": "Ad spend"},
+        {"name": "Notes", "type": "Long text", "description": ""}
+      ]
+    }
+  ]
+}
