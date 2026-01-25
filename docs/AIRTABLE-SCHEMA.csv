@@ -1,0 +1,192 @@
+Table,Field,Type,Options,Description
+People,Name,Text,,Primary field - full name
+People,Phone,Phone,,Primary phone for matching calls/texts
+People,Phone 2,Phone,,Secondary number
+People,Email,Email,,
+People,Photo,Attachment,,Profile photo
+People,Background,Long text,,"Where they came from, what shaped them"
+People,Current Chapter,Single select,"New Parent, Empty Nester, Career Builder, Entrepreneur, Retiring, Starting Over, Building Wealth, Health Journey, Newlywed, Single Life, Student",Life stage they're in
+People,What They're Building,Long text,,"Goals, dreams, projects they're working on"
+People,What They're Navigating,Long text,,"Challenges, decisions, problems they're facing"
+People,What Lights Them Up,Long text,,"Passions, hobbies, what they talk about with energy"
+People,Partner,Text,,Spouse/partner name
+People,Kids,Long text,,"Names, ages, what they're into"
+People,Inner Circle,Long text,,"Close friends, people they mention often"
+People,Who Influences Them,Long text,,"Mentors, people they look up to"
+People,Communication Style,Single select,"Texter, Caller, In-Person, Email, Quick & Direct, Long Conversations",How they prefer to communicate
+People,Best Time to Reach,Text,,When to contact them
+People,Personality Notes,Long text,,"Introverted, extroverted, vibe"
+People,Birthday,Date,,
+People,Anniversary,Date,,
+People,Other Important Dates,Long text,,"Kid birthdays, work anniversary, etc."
+People,Occupation,Text,,What they do for work
+People,Company,Text,,Where they work
+People,Industry,Text,,
+People,Neighborhood,Text,,Where they live
+People,Communities,Long text,,"Groups, clubs, churches, orgs"
+People,Hangouts,Long text,,Where they spend time
+People,How We Met,Long text,,The origin story
+People,Introduced By,Link to People,,Who connected you
+People,First Impression,Long text,,"What you noticed, what clicked"
+People,Shared Experiences,Long text,,"Trips, meals, moments together"
+People,Inside References,Long text,,"Jokes, stories only you two know"
+People,Relationship Strength,Rating (1-5),,Your gut feeling on connection depth
+People,Trajectory,Single select,"Growing, Stable, Needs Attention, Fading, New",Direction of the relationship
+People,Last Real Connection,Date,,Last meaningful human moment (not transaction)
+People,Connection Frequency,Single select,"Weekly, Monthly, Quarterly, Yearly, Sporadic",How often you connect
+People,What We Talk About,Long text,,"Topics, themes, recurring conversations"
+People,Notes,Long text,,Running notes
+People,Status,Single select,"New, Friend, Prospect, Customer, Repeat Customer, VIP, Dormant, Lost",Relationship/business status
+People,Source,Single select,"Walk-in, Referral, Web, Social, Service, Event, Cold, Repeat",How they entered your world
+People,Vehicle Interest,Text,,What vehicle they're interested in
+People,Budget,Currency,,Price range
+People,Timeline,Single select,"Now, This Month, 2-3 Months, Researching, Not Looking",Purchase timeline
+People,Tags,Multiple select,"Cash Buyer, Financing, Trade-In, Spanish, Fleet, Employee, Family, VIP, Referrer, Connector",Flexible tags
+People,Created,Created time,,Auto
+People,Last Modified,Last modified time,,Auto
+Value Log,Person,Link to People,,Who this value exchange was with
+Value Log,Date,Date,,When it happened
+Value Log,Direction,Single select,"Given, Received",Did you give or receive value
+Value Log,Type,Single select,"Introduction, Information, Opportunity, Help, Gift, Experience, Recognition, Referral, Invitation, Recommendation, Advice, Support",Category of value
+Value Log,Description,Long text,,What happened
+Value Log,Impact,Single select,"Small, Medium, Large, Life-Changing",How significant was this
+Value Log,Reciprocated,Checkbox,,Was this returned in kind
+Value Log,Notes,Long text,,Additional context
+Introductions,Date,Date,,When intro was made
+Introductions,Connector,Link to People,,Person who made the introduction
+Introductions,Person A,Link to People,,First person introduced
+Introductions,Person B,Link to People,,Second person introduced
+Introductions,Context,Long text,,Why the introduction was made
+Introductions,Outcome,Long text,,What came of it
+Introductions,Direction,Single select,"Received (someone introduced me), Made (I introduced others)",Who initiated
+Life Events,Person,Link to People,,Whose life event
+Life Events,Date,Date,,When it happened
+Life Events,Type,Single select,"Birthday, Anniversary, Baby Born, Kid Milestone, Graduation, Wedding, Engagement, New Job, Promotion, Started Business, Retired, Moved, Health Challenge, Loss, Big Win, Achievement, Other",Type of event
+Life Events,Title,Text,,Brief description
+Life Events,Details,Long text,,Full details
+Life Events,You Showed Up,Checkbox,,Did you acknowledge/celebrate/support
+Life Events,How You Showed Up,Long text,,What you did
+Opportunities,Person,Link to People,,Who you could help
+Opportunities,Type,Single select,"Introduction to Make, Information to Share, Opportunity to Tell Them, Problem to Help Solve, Event to Invite To, Way to Celebrate Them, Resource to Send, Other",Type of opportunity
+Opportunities,Description,Long text,,What you could do for them
+Opportunities,Why It Matters,Long text,,Why this would be valuable to them
+Opportunities,Status,Single select,"Identified, In Progress, Done, Not Applicable",Status
+Opportunities,Priority,Single select,"Low, Medium, High, Do Today",Urgency
+Opportunities,Date Identified,Date,,When you noticed this
+Opportunities,Date Completed,Date,,When you acted
+Opportunities,Outcome,Long text,,What happened
+Calls,Person,Link to People,,Who the call was with
+Calls,Phone,Phone,,Number (for unknown callers)
+Calls,Direction,Single select,"Inbound, Outbound",Call direction
+Calls,Status,Single select,"Answered, Missed, Voicemail, No Answer",What happened
+Calls,Duration,Number,,Seconds
+Calls,Recording URL,URL,,Link to recording
+Calls,Transcription,Long text,,Call transcript
+Calls,Summary,Long text,,AI or manual summary
+Calls,What I Learned,Long text,,New info about them
+Calls,Follow Up Needed,Long text,,What to do next
+Calls,Relationship Impact,Single select,"Deepened, Maintained, Neutral, Damaged",How did this affect the relationship
+Calls,Notes,Long text,,Your notes
+Calls,Timestamp,Date time,,When call happened
+Calls,Twilio SID,Text,,Reference ID
+Messages,Person,Link to People,,Who the message was with
+Messages,Phone,Phone,,Number (for unknown)
+Messages,Direction,Single select,"Inbound, Outbound",Message direction
+Messages,Body,Long text,,Message content
+Messages,Status,Single select,"Received, Sent, Delivered, Read, Failed",Delivery status
+Messages,Template Used,Link to Templates,,If sent from template
+Messages,Timestamp,Date time,,When sent/received
+Messages,Twilio SID,Text,,Reference ID
+Deals,Person,Link to People,,Who the deal is with
+Deals,Vehicle,Link to Inventory,,What vehicle
+Deals,Stage,Single select,"Prospect, Test Drive, Negotiation, Pencil, F&I, Delivery, Sold, Dead",Pipeline stage
+Deals,Stage Changed,Date time,,When stage changed
+Deals,Asking Price,Currency,,
+Deals,Negotiated Price,Currency,,
+Deals,Trade Vehicle,Text,,Their trade-in
+Deals,Trade Allowance,Currency,,
+Deals,Trade ACV,Currency,,Actual cash value
+Deals,Down Payment,Currency,,
+Deals,Monthly Payment,Currency,,
+Deals,Term,Number,,Months
+Deals,Rate,Percent,,Interest rate
+Deals,Objections,Long text,,What's holding them back
+Deals,Hot Button,Long text,,What will close this deal
+Deals,Competition,Text,,Other options they're considering
+Deals,Expected Close,Date,,
+Deals,Actual Close,Date time,,
+Deals,Won,Checkbox,,Did we win
+Deals,Lost Reason,Single select,"Price, Trade Value, Credit, Bought Elsewhere, No Response, Timing, Other",Why we lost
+Deals,Front Gross,Currency,,Vehicle profit
+Deals,Back Gross,Currency,,F&I profit
+Deals,Commission,Currency,,Your earnings
+Deals,Notes,Long text,,
+Deals,Created,Created time,,
+Tasks,Person,Link to People,,Related contact
+Tasks,Deal,Link to Deals,,Related deal if any
+Tasks,Type,Single select,"Follow-up Call, Follow-up Text, Send Info, Make Introduction, Check In, Appointment Reminder, Credit App, Paperwork, Delivery, Post-Sale Follow-up, Add Value, Other",Task type
+Tasks,Title,Text,,Brief description
+Tasks,Description,Long text,,Details
+Tasks,Due Date,Date,,
+Tasks,Due Time,Text,,
+Tasks,Priority,Single select,"Low, Normal, High, Urgent",
+Tasks,Status,Single select,"Pending, In Progress, Done, Skipped",
+Tasks,Outcome,Long text,,What happened
+Tasks,Created,Created time,,
+Tasks,Completed,Date time,,
+Appointments,Person,Link to People,,Who it's with
+Appointments,Type,Single select,"Test Drive, Showroom Visit, Phone Call, Coffee/Meal, Delivery, Follow-up Meeting, Other",Meeting type
+Appointments,Vehicle,Link to Inventory,,If vehicle specific
+Appointments,Date,Date,,
+Appointments,Time,Text,,
+Appointments,Duration,Number,,Minutes
+Appointments,Location,Text,,Where
+Appointments,Status,Single select,"Scheduled, Confirmed, Arrived, Completed, No Show, Cancelled, Rescheduled",
+Appointments,Reminder Sent,Checkbox,,
+Appointments,Notes,Long text,,Pre-meeting notes
+Appointments,Outcome,Long text,,What happened
+Appointments,Created,Created time,,
+Inventory,Stock Number,Text,,Primary identifier
+Inventory,VIN,Text,,
+Inventory,Year,Number,,
+Inventory,Make,Text,,
+Inventory,Model,Text,,
+Inventory,Trim,Text,,
+Inventory,Type,Single select,"New, Pre-Owned, Certified Pre-Owned",
+Inventory,Body Style,Single select,"Sedan, SUV, Truck, Coupe, Van, Hatchback, Wagon, Convertible",
+Inventory,Exterior Color,Text,,
+Inventory,Interior Color,Text,,
+Inventory,Mileage,Number,,
+Inventory,Fuel Type,Single select,"Gas, Hybrid, Electric, Plug-in Hybrid, Diesel",
+Inventory,Engine,Text,,
+Inventory,Transmission,Single select,"Automatic, Manual, CVT",
+Inventory,Drivetrain,Single select,"FWD, RWD, AWD, 4WD",
+Inventory,MSRP,Currency,,Sticker price (new)
+Inventory,Internet Price,Currency,,Listed price
+Inventory,Invoice,Currency,,Dealer cost (new)
+Inventory,ACV,Currency,,Actual cash value (used)
+Inventory,Min Gross,Currency,,Floor for negotiation
+Inventory,Features,Long text,,Key features
+Inventory,Description,Long text,,Listing description
+Inventory,Image URL,URL,,Main photo
+Inventory,Listing URL,URL,,Website link
+Inventory,Status,Single select,"Available, Pending, Sold, Incoming, Hold",
+Inventory,Days on Lot,Number,,Auto-calculate if possible
+Inventory,Date Added,Date,,
+Inventory,Last Updated,Date time,,
+Inventory,Sold Date,Date,,
+Inventory,Sold To,Link to People,,
+Inventory,Sold Price,Currency,,
+Templates,Name,Text,,Quick reference name
+Templates,Category,Single select,"Greeting, Follow-up, Appointment, Info Request, Negotiation, Post-Sale, Check-in, Birthday, Holiday, Be-Back, Introduction, Thank You",
+Templates,Body,Long text,,Message with {placeholders}
+Templates,Placeholders,Long text,,"List of variables: {Name}, {Vehicle}, etc."
+Templates,Use Count,Number,,Times used
+Templates,Last Used,Date time,,
+Templates,Active,Checkbox,,Still in use
+Sources,Name,Text,,Source name
+Sources,Type,Single select,"Walk-in, Phone-in, Internet, Referral, Repeat, Service Drive, Social Media, Event, Cold Outreach",
+Sources,Channel,Single select,"Organic, Paid, Social, Direct, Referral",
+Sources,Active,Checkbox,,Still using this source
+Sources,Monthly Cost,Currency,,Ad spend
+Sources,Notes,Long text,,
