@@ -1,0 +1,26 @@
+Field Name,Field Type,Options,Description
+Person,Link to People,,Who the deal is with
+Vehicle,Link to Inventory,,What vehicle
+Stage,Single select,"Prospect, Test Drive, Negotiation, Pencil, F&I, Delivery, Sold, Dead",Pipeline stage
+Stage Changed,Date and time,,When stage changed
+Asking Price,Currency,,
+Negotiated Price,Currency,,
+Trade Vehicle,Single line text,,Their trade-in
+Trade Allowance,Currency,,
+Trade ACV,Currency,,Actual cash value
+Down Payment,Currency,,
+Monthly Payment,Currency,,
+Term,Number,,Months
+Rate,Percent,,Interest rate
+Objections,Long text,,What's holding them back
+Hot Button,Long text,,What will close this deal
+Competition,Single line text,,Other options they're considering
+Expected Close,Date,,
+Actual Close,Date and time,,
+Won,Checkbox,,
+Lost Reason,Single select,"Price, Trade Value, Credit, Bought Elsewhere, No Response, Timing, Other",Why we lost
+Front Gross,Currency,,Vehicle profit
+Back Gross,Currency,,F&I profit
+Commission,Currency,,Your earnings
+Notes,Long text,,
+Created,Created time,,

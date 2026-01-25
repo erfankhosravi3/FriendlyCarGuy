@@ -1,0 +1,15 @@
+Field Name,Field Type,Options,Description
+Person,Link to People,,Who the call was with
+Phone,Phone number,,For unknown callers
+Direction,Single select,"Inbound, Outbound",Call direction
+Status,Single select,"Answered, Missed, Voicemail, No Answer",What happened
+Duration,Number,,Seconds
+Recording URL,URL,,Link to recording
+Transcription,Long text,,Call transcript
+Summary,Long text,,AI or manual summary
+What I Learned,Long text,,New info about them
+Follow Up Needed,Long text,,What to do next
+Relationship Impact,Single select,"Deepened, Maintained, Neutral, Damaged",How this affected the relationship
+Notes,Long text,,Your notes
+Timestamp,Date and time,,When call happened
+Twilio SID,Single line text,,Reference ID

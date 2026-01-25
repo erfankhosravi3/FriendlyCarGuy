@@ -1,0 +1,9 @@
+Field Name,Field Type,Options,Description
+Person,Link to People,,Who the message was with
+Phone,Phone number,,For unknown contacts
+Direction,Single select,"Inbound, Outbound",Message direction
+Body,Long text,,Message content
+Status,Single select,"Received, Sent, Delivered, Read, Failed",Delivery status
+Template Used,Link to Templates,,If sent from template
+Timestamp,Date and time,,When sent/received
+Twilio SID,Single line text,,Reference ID
