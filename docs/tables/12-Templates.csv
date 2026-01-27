@@ -1,8 +1,1 @@
-Field Name,Field Type,Options,Description
-Name,Single line text,,Quick reference (PRIMARY FIELD)
-Category,Single select,"Greeting, Follow-up, Appointment, Info Request, Negotiation, Post-Sale, Check-in, Birthday, Holiday, Be-Back, Introduction, Thank You",
-Body,Long text,,Message with {placeholders}
-Placeholders,Long text,,"Variables like {Name}, {Vehicle}"
-Use Count,Number,,Times used
-Last Used,Date and time,,
-Active,Checkbox,,Still in use
+Name,Category,Body,Placeholders,Use Count,Last Used,Active

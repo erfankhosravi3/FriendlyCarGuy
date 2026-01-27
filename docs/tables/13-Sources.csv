@@ -1,7 +1,1 @@
-Field Name,Field Type,Options,Description
-Name,Single line text,,Source name (PRIMARY FIELD)
-Type,Single select,"Walk-in, Phone-in, Internet, Referral, Repeat, Service Drive, Social Media, Event, Cold Outreach",
-Channel,Single select,"Organic, Paid, Social, Direct, Referral",
-Active,Checkbox,,Still using
-Monthly Cost,Currency,,Ad spend
-Notes,Long text,,
+Name,Type,Channel,Active,Monthly Cost,Notes

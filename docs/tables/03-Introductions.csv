@@ -1,8 +1,1 @@
-Field Name,Field Type,Options,Description
-Date,Date,,When intro was made
-Connector,Link to People,,Person who made the introduction
-Person A,Link to People,,First person introduced
-Person B,Link to People,,Second person introduced
-Context,Long text,,Why the introduction was made
-Outcome,Long text,,What came of it
-Direction,Single select,"Received (someone introduced me), Made (I introduced others)",Who initiated
+Date,Connector,Person A,Person B,Context,Outcome,Direction

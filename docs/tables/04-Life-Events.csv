@@ -1,8 +1,1 @@
-Field Name,Field Type,Options,Description
-Person,Link to People,,Whose life event
-Date,Date,,When it happened
-Type,Single select,"Birthday, Anniversary, Baby Born, Kid Milestone, Graduation, Wedding, Engagement, New Job, Promotion, Started Business, Retired, Moved, Health Challenge, Loss, Big Win, Achievement, Other",Type of event
-Title,Single line text,,Brief description
-Details,Long text,,Full details
-You Showed Up,Checkbox,,Did you acknowledge this
-How You Showed Up,Long text,,What you did
+Person,Date,Type,Title,Details,You Showed Up,How You Showed Up

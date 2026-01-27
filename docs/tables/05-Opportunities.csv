@@ -1,10 +1,1 @@
-Field Name,Field Type,Options,Description
-Person,Link to People,,Who you could help
-Type,Single select,"Introduction to Make, Information to Share, Opportunity to Tell Them, Problem to Help Solve, Event to Invite To, Way to Celebrate Them, Resource to Send, Other",Type of opportunity
-Description,Long text,,What you could do
-Why It Matters,Long text,,Why this would be valuable to them
-Status,Single select,"Identified, In Progress, Done, Not Applicable",Status
-Priority,Single select,"Low, Medium, High, Do Today",Urgency
-Date Identified,Date,,When you noticed this
-Date Completed,Date,,When you acted
-Outcome,Long text,,What happened
+Person,Type,Description,Why It Matters,Status,Priority,Date Identified,Date Completed,Outcome

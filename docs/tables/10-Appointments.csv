@@ -1,13 +1,1 @@
-Field Name,Field Type,Options,Description
-Person,Link to People,,Who it's with
-Type,Single select,"Test Drive, Showroom Visit, Phone Call, Coffee/Meal, Delivery, Follow-up Meeting, Other",Meeting type
-Vehicle,Link to Inventory,,If vehicle specific
-Date,Date,,
-Time,Single line text,,
-Duration,Number,,Minutes
-Location,Single line text,,Where
-Status,Single select,"Scheduled, Confirmed, Arrived, Completed, No Show, Cancelled, Rescheduled",
-Reminder Sent,Checkbox,,
-Notes,Long text,,Pre-meeting notes
-Outcome,Long text,,What happened
-Created,Created time,,
+Person,Type,Vehicle,Date,Time,Duration,Location,Status,Reminder Sent,Notes,Outcome

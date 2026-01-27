@@ -1,13 +1,1 @@
-Field Name,Field Type,Options,Description
-Person,Link to People,,Related contact
-Deal,Link to Deals,,Related deal if any
-Type,Single select,"Follow-up Call, Follow-up Text, Send Info, Make Introduction, Check In, Appointment Reminder, Credit App, Paperwork, Delivery, Post-Sale Follow-up, Add Value, Other",Task type
-Title,Single line text,,Brief description
-Description,Long text,,Details
-Due Date,Date,,
-Due Time,Single line text,,
-Priority,Single select,"Low, Normal, High, Urgent",
-Status,Single select,"Pending, In Progress, Done, Skipped",
-Outcome,Long text,,What happened
-Created,Created time,,
-Completed,Date and time,,
+Person,Deal,Type,Title,Description,Due Date,Due Time,Priority,Status,Outcome,Completed

@@ -1,9 +1,1 @@
-Field Name,Field Type,Options,Description
-Person,Link to People,,Who this value exchange was with
-Date,Date,,When it happened
-Direction,Single select,"Given, Received",Did you give or receive value
-Type,Single select,"Introduction, Information, Opportunity, Help, Gift, Experience, Recognition, Referral, Invitation, Recommendation, Advice, Support",Category of value
-Description,Long text,,What happened
-Impact,Single select,"Small, Medium, Large, Life-Changing",How significant
-Reciprocated,Checkbox,,Was this returned
-Notes,Long text,,Additional context
+Person,Date,Direction,Type,Description,Impact,Reciprocated,Notes
